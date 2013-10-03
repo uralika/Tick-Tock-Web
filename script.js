@@ -19,58 +19,84 @@ for(r=0;r<=2;++r)
 		}
 	}
 
+somebodyWon = false;
 for(x=0;x<=2;x++)
 {
 	if(cellArray[0][x] == cellArray[1][x] &&
 		cellArray[1][x] == cellArray[2][x] && 
 		cellArray[0][x] != "" &&
 		cellArray[0][x] == '<img src="tick_tock.jpg">')
-
+		{
 				document.getElementById("tick_tock").style.display="block";
+				somebodyWon = true;
+		}
 	if (cellArray[0][x] == cellArray[1][x] &&
 		cellArray[1][x] == cellArray[2][x] && 
 		cellArray[0][x] != "" &&
 		cellArray[0][x] == '<img src="web.jpeg">') 
+		{
 				document.getElementById("web").style.display="block";
+				somebodyWon = true;
+		}
 
 //alert(cellArray[0][x] + " won in column " + (x+1));
 	if(cellArray[x][0] == cellArray[x][1] &&
 		cellArray[x][1] == cellArray[x][2] && 
 		cellArray[x][0] != "" &&
 		cellArray[x][0] == '<img src="tick_tock.jpg">')
+		{
 				document.getElementById("tick_tock").style.display="block";
+				somebodyWon = true;
+		}
 
 	if (cellArray[x][0] == cellArray[x][1] &&
 		cellArray[x][1] == cellArray[x][2] && 
 		cellArray[x][0] != "" &&
-		cellArray[x][0] == '<img src="web.jpeg">')
+		cellArray[x][0] =='<img src="web.jpeg">')
+		{
 				document.getElementById("web").style.display="block";
+				somebodyWon = true;
+		}
 //alert(cellArray[x][0] + " won in row " + (x+1));
+	}
 
 	if(cellArray[0][0] == cellArray[1][1] &&
 	   cellArray[1][1] == cellArray[2][2] &&
 	   cellArray[0][0] != "" &&
 	   cellArray[0][0] == '<img src="tick_tock.jpg">')
+		{
 	   			document.getElementById("tick_tock").style.display="block";
+				somebodyWon = true;
+		}
 
 	if (cellArray[0][0] == cellArray[2][2] &&
 	   cellArray[1][1] == cellArray[2][2] &&
 	   cellArray[0][0] != "" &&
 	   cellArray[0][0] == '<img src="web.jpeg">')
+		{
 	   			document.getElementById("web").style.display="block";
+				somebodyWon = true;
+		}
 
 	if(cellArray[0][2] == cellArray[1][1] &&
 	   cellArray[1][1] == cellArray[2][0] &&
 	   cellArray[0][2] != "" &&
 	   cellArray[0][2] == '<img src="tick_tock.jpg">')
+		{
 	   			document.getElementById("tick_tock").style.display="block";
+				somebodyWon = true;
+		}
 	   		
 	if (cellArray[0][2] == cellArray[1][1] &&
 	   cellArray[1][1] == cellArray[2][0] &&
 	   cellArray[0][2] != "" &&
 	   cellArray[0][2] == '<img src="web.jpeg">')
+		{
 	   			document.getElementById("web").style.display="block";
-
+				somebodyWon = true;
 		}
-	}
+
+	if (!somebodyWon && playerTurn == 10)
+				document.getElementById("draw").style.display="block";
+		}
 }
